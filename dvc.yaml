@@ -1,0 +1,12 @@
+stages:
+  load_data:
+    cmd: python src/pipeline/Stage02_grabing_data_from_mongo_pipeline.py
+    deps:
+      - src/pipeline/Stage02_grabing_data_from_mongo_pipeline.py
+      - src/logger.py
+      - src/mongo_db/Mongo_connection.py
+      - src/mongo_db/mongo_data_source.py
+      - src/utils/utlis.py  # Make sure to include the correct path
+      - params.yaml
+    outs:
+      - data/raw/winequality.csv

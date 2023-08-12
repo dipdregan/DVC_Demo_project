@@ -14,7 +14,7 @@ class MongoDataSource:
             projection = {'_id': 0}
 
             records = list(collection.find({}, projection))
-            logging.info(records)
+    
             return records
 
         except Exception as e:

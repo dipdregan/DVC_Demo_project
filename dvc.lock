@@ -1,0 +1,34 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/pipeline/Stage02_grabing_data_from_mongo_pipeline.py
+    deps:
+    - path: params.yaml
+      hash: md5
+      md5: a008bac41aa01265507478cadeb93460
+      size: 506
+    - path: src/logger.py
+      hash: md5
+      md5: 3c62b7d6ead14f8e65145e4cb8b30ded
+      size: 431
+    - path: src/mongo_db/Mongo_connection.py
+      hash: md5
+      md5: 66f4f7e1bd29669b20c42f5d0eaf5be1
+      size: 821
+    - path: src/mongo_db/mongo_data_source.py
+      hash: md5
+      md5: 31c94c11b0bceceabbb89b5bd54aa8b8
+      size: 617
+    - path: src/pipeline/Stage02_grabing_data_from_mongo_pipeline.py
+      hash: md5
+      md5: c7be5190ac687780414ec995a6f4b140
+      size: 1619
+    - path: src/utils/utlis.py
+      hash: md5
+      md5: 4b5f9302aa6b5d28feae56d7e14c1e0e
+      size: 686
+    outs:
+    - path: data/raw/winequality.csv
+      hash: md5
+      md5: bc5bfeb4bcc294c4668b64ccdf8953e6
+      size: 373954

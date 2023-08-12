@@ -1,0 +1,21 @@
+base:
+  project: winequakity-project
+  random_state: 42
+  target: TARGET
+
+data_source:
+  mongo_db:
+    host: localhost  # MongoDB host
+    port: 27017     # MongoDB port
+    db_name: wine_quality_db  # MongoDB database name
+    collection_name: wine_quality_collection  # MongoDB collection name
+
+load_data:
+  raw_dataset_csv: data/raw/winequality.csv
+
+split_data:
+  train_path: data/processed/train_winequality.csv
+  test_path: data/processed/test_winequality.csv 
+  test_size: 0.25
+
+

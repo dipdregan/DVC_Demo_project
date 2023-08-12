@@ -10,3 +10,14 @@ stages:
       - params.yaml
     outs:
       - data/raw/winequality.csv
+  split_data:
+    cmd: python src/split_data.py
+    deps:
+      - src/split_data.py
+      - src/logger.py
+      - src/utils/utlis.py
+      - params.yaml
+      - data/raw/winequality.csv  # Assuming this is the output from the load_data stage
+    outs:
+      - data/processed/train_winequality.csv
+      - data/processed/test_winequality.csv

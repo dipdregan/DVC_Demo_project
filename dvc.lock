@@ -5,8 +5,8 @@ stages:
     deps:
     - path: params.yaml
       hash: md5
-      md5: a008bac41aa01265507478cadeb93460
-      size: 506
+      md5: 16f0e6cd5ca112ca7c492993d8106e4f
+      size: 507
     - path: src/logger.py
       hash: md5
       md5: 3c62b7d6ead14f8e65145e4cb8b30ded
@@ -21,8 +21,8 @@ stages:
       size: 617
     - path: src/pipeline/Stage02_grabing_data_from_mongo_pipeline.py
       hash: md5
-      md5: c7be5190ac687780414ec995a6f4b140
-      size: 1619
+      md5: 0536ddfb6f715635af53ac619e37cc3a
+      size: 1621
     - path: src/utils/utlis.py
       hash: md5
       md5: 4b5f9302aa6b5d28feae56d7e14c1e0e
@@ -32,3 +32,35 @@ stages:
       hash: md5
       md5: bc5bfeb4bcc294c4668b64ccdf8953e6
       size: 373954
+  split_data:
+    cmd: python src/split_data.py
+    deps:
+    - path: data/raw/winequality.csv
+      hash: md5
+      md5: bc5bfeb4bcc294c4668b64ccdf8953e6
+      size: 373954
+    - path: params.yaml
+      hash: md5
+      md5: 16f0e6cd5ca112ca7c492993d8106e4f
+      size: 507
+    - path: src/logger.py
+      hash: md5
+      md5: 3c62b7d6ead14f8e65145e4cb8b30ded
+      size: 431
+    - path: src/split_data.py
+      hash: md5
+      md5: 1ef31c10b964488f662f9e747cece33b
+      size: 993
+    - path: src/utils/utlis.py
+      hash: md5
+      md5: 4b5f9302aa6b5d28feae56d7e14c1e0e
+      size: 686
+    outs:
+    - path: data/processed/test_winequality.csv
+      hash: md5
+      md5: e50f24b17f2bfaec50e1e139fce1ce7e
+      size: 93693
+    - path: data/processed/train_winequality.csv
+      hash: md5
+      md5: 3ba8bd92773aaed14800c7263115fda2
+      size: 280407

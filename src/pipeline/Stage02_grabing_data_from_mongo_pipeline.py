@@ -41,6 +41,7 @@ def data_loading_mongodb():
         logging.info(f"{'=='*10} Saved the record to ...{path} this path {'=='*10}")
         logging.info(f"{'=='*50}")
 
+
     except Exception as e:
         logging.error(str(e))
 

@@ -11,6 +11,7 @@ def read_params(config_path):
         return config
     except Exception as e:
         logging.info(str(e))
+        #kjaskj
 
 def export_to_csv(data, csv_filename):
     try:

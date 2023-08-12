@@ -1,1 +1,6 @@
 env/
+build
+dist
+log
+__pycache__/
+Winequality_project.egg-info

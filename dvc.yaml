@@ -6,10 +6,11 @@ stages:
       - src/logger.py
       - src/mongo_db/Mongo_connection.py
       - src/mongo_db/mongo_data_source.py
-      - src/utils/utlis.py  # Make sure to include the correct path
+      - src/utils/utlis.py
       - params.yaml
     outs:
       - data/raw/winequality.csv
+
   split_data:
     cmd: python src/split_data.py
     deps:
@@ -17,7 +18,23 @@ stages:
       - src/logger.py
       - src/utils/utlis.py
       - params.yaml
-      - data/raw/winequality.csv  # Assuming this is the output from the load_data stage
+      - data/raw/winequality.csv
     outs:
       - data/processed/train_winequality.csv
       - data/processed/test_winequality.csv
+
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py
+    deps:
+      - src/train_and_evaluate.py
+      - src/utils/utlis.py
+      - params.yaml
+      - data/processed/train_winequality.csv
+      - data/processed/test_winequality.csv
+    metrics:
+      - report/scores.json:
+          cache: false
+      - report/params.json:
+          cache: false
+    outs:
+      - save_model/model.joblib

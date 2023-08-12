@@ -5,17 +5,27 @@ base:
 
 data_source:
   mongo_db:
-    host: localhost  # MongoDB host
-    port: 27017     # MongoDB port
-    db_name: wine_quality_db  # MongoDB database name
-    collection_name: wine_quality_collection  # MongoDB collection name
+    host: localhost
+    port: 27017
+    db_name: wine_quality_db
+    collection_name: wine_quality_collection
 
 load_data:
   raw_dataset_csv: data/raw/winequality.csv
 
 split_data:
   train_path: data/processed/train_winequality.csv
-  test_path: data/processed/test_winequality.csv 
+  test_path: data/processed/test_winequality.csv
   test_size: 0.25
 
+model_dir: save_model
 
+estimators:
+  ElasticNet:
+    params:
+      alpha: 0.88
+      l1_ratio: 0.89
+
+reports:
+  params: report/params.json
+  scores: report/scores.json

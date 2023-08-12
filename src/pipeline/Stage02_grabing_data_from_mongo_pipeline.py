@@ -1,34 +1,42 @@
+from src.logger import logging
 from src.mongo_db.Mongo_connection import MongoDBConnection
 from src.mongo_db.mongo_data_source import MongoDataSource
-from src.utils.utlis import read_params, save_data_as_csv
-from src.logger import logging
+from src.utils.utlis import read_params,export_to_csv
 import os
+import pandas as pd
 
 
 
 def data_loading_mongodb():
     try:
-        # Read parameters from the config file
+        logging.info(f"{'=='*10} Pipeline Grabbing data from MongoDB started...{'=='*10}")
+        logging.info(f"{'=='*30}")
         config_path = os.path.join(os.getcwd(), "params.yaml")
         params = read_params(config_path)
         mongo = params['data_source']['mongo_db']
         path = params['load_data']['raw_dataset_csv']
-        
-        # Initialize MongoDB connection
-        connection = MongoDBConnection(
-                host=mongo['host'],
-                port=mongo['port']
-            )
 
+        logging.info(f"{'=='*10} connection started..... {'=='*10}")
+        
+        connection = MongoDBConnection(
+            host=mongo['host'],
+            port=mongo['port']
+        )
         client = connection.connect()
 
-        # Initialize MongoDB DataSource
-        data_source= MongoDataSource(client)
+        logging.info(f"{'=='*10} Connection Stablished...{'=='*10}")
 
+        data_source = MongoDataSource(client)
         collection = mongo['collection_name']
-        data = data_source.fetch_records(collection)
-        data_source.export_to_csv(data,path)
+        database = mongo['db_name']
+        logging.info(f"{'=='*10} Fetching the record...{'=='*10}")
 
+        data = data_source.fetch_records(database,collection)
+        export_to_csv(data, path)
+
+        logging.info(f"{'=='*10} Saved the record to ...{path} this path {'=='*10}")
+        logging.info(f"{'=='*50}")
 
     except Exception as e:
-        logging.info(str(e))
+        logging.error(str(e))
+

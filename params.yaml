@@ -23,8 +23,10 @@ model_dir: save_model
 estimators:
   ElasticNet:
     params:
-      alpha: 0.88
-      l1_ratio: 0.89
+      # alpha: 0.88
+      # l1_ratio: 0.89
+      alpha: 0.9
+      l1_ratio: 0.7
 
 reports:
   params: report/params.json

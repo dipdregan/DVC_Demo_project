@@ -30,7 +30,7 @@ estimators:
       # l1_ratio: 0.5
       
       alpha: 0.912545
-      l1_ratio: 0.8523
+      l1_ratio: 0.99
 
 reports:
   params: report/params.json

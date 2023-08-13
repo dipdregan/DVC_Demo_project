@@ -26,3 +26,27 @@ dvc add "path the data set"
         my case
 dvc add data_given/winequality.csv
 ```
+```
+dvc repro
+dvc metrics diff
+dvc metrics show
+dvc params diff
+```
+tox command -
+```
+tox
+```
+
+for rebuilding
+```
+tox -r
+```
+pytest command
+```
+pytest -v test/
+```
+
+setup commands -
+```
+pip install -e .
+```

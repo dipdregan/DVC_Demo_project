@@ -5,8 +5,8 @@ stages:
     deps:
     - path: params.yaml
       hash: md5
-      md5: eaf6708d175c0ce5631624afb75222c0
-      size: 704
+      md5: e7542a62be9d62829952b8b96ee8d303
+      size: 702
     - path: src/logger.py
       hash: md5
       md5: 3c62b7d6ead14f8e65145e4cb8b30ded
@@ -41,8 +41,8 @@ stages:
       size: 373954
     - path: params.yaml
       hash: md5
-      md5: eaf6708d175c0ce5631624afb75222c0
-      size: 704
+      md5: e7542a62be9d62829952b8b96ee8d303
+      size: 702
     - path: src/logger.py
       hash: md5
       md5: 3c62b7d6ead14f8e65145e4cb8b30ded
@@ -77,8 +77,8 @@ stages:
       size: 280407
     - path: params.yaml
       hash: md5
-      md5: eaf6708d175c0ce5631624afb75222c0
-      size: 704
+      md5: e7542a62be9d62829952b8b96ee8d303
+      size: 702
     - path: src/train_and_evaluate.py
       hash: md5
       md5: 7ca8a6b94446a75e0a78fd263633be99
@@ -90,13 +90,13 @@ stages:
     outs:
     - path: report/params.json
       hash: md5
-      md5: a6cbf21dc767b9f92582d651b33827a3
-      size: 52
+      md5: ec62e96e8c017aa18824f1ae43d5a971
+      size: 50
     - path: report/scores.json
       hash: md5
-      md5: 3a58aa7f680291d0723fb0f5951bf835
-      size: 100
+      md5: 3b75ddeaa1965d70ec29f70b87620857
+      size: 101
     - path: save_model/model.joblib
       hash: md5
-      md5: 7de6f4cf60ae41caed2f331515a709ec
+      md5: 084a54dfdd1c757a0a10dfd63efa4dc1
       size: 1263

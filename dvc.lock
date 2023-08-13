@@ -81,8 +81,8 @@ stages:
       size: 637
     - path: src/train_and_evaluate.py
       hash: md5
-      md5: 698deb7fced0cbcc7c1f10e957a0d4b8
-      size: 2347
+      md5: 7ca8a6b94446a75e0a78fd263633be99
+      size: 2563
     - path: src/utils/utlis.py
       hash: md5
       md5: 4b5f9302aa6b5d28feae56d7e14c1e0e
